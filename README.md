@@ -3,6 +3,9 @@
 > 一套給講師上課、給學生自學的 **Claude Desktop 斜線指令完整教材**。
 > 從「打一個 `/` 開始」到「自己寫一個指令」，循序漸進、附範例與練習。
 
+> 🧭 **技能哲學：官方的用官方、缺的找一份 `.md`。**
+> 日常直接用官方內建技能（**別替換**）；需要額外功能，就到 GitHub 找一份適合當下任務的 skill `.md`，把網址貼給 agent 叫它讀並執行——**不必碰 `.zip` 上傳或外掛市集**。
+
 ![Level](https://img.shields.io/badge/level-入門到進階-blue)
 ![Lang](https://img.shields.io/badge/語言-繁體中文-green)
 ![Topic](https://img.shields.io/badge/主題-Claude%20Desktop%20%2F%20Claude%20Code-purple)
