@@ -111,6 +111,7 @@
 
 > **市集與技能可包含會被執行的程式碼與腳本。加入第三方市集 = 信任該來源。**
 
+- **只做加法,別替換官方** —— 這些來源是用來「額外新增」技能;**不要拿來覆蓋或修改官方內建技能**。官方 Skills 會隨 Claude Desktop 更新,並配合模型能力、harness、loop 工程(原因詳見 [第 7 課](07-anthropic-skills.md))。
 - **最安全**:`anthropics/*` 三個官方來源。
 - 第三方市集/清單:**安裝前先看該技能的 `SKILL.md` 與 `scripts/`**,確認它做什麼。
 - 用 `allowed-tools` 限制技能可用工具;用 `claude plugin validate` 檢查結構。
