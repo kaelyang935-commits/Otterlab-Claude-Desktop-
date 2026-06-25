@@ -89,6 +89,7 @@
 - 結構：資料夾 + `SKILL.md`（`name` ≤64 字、`description` ≤1024 字，description 決定觸發）
 - 漸進式揭露三層：中繼資料（啟動）→ `SKILL.md` 本文（觸發時）→ 附帶資源／腳本（需要時）
 - 安裝：Claude Code `/plugin marketplace add anthropics/skills` → `/plugin`；App 上傳 `.zip`
+- 更多來源：Top 10 來源榜見第 9 課（🛒 市集可一鍵 `add`，📒 清單需自行取用）
 - ⚠️ 第三方技能能執行程式碼，安裝前先審查來源與腳本
 
 ---

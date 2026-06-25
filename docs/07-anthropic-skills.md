@@ -282,4 +282,6 @@ resp = client.beta.messages.create(
 
 ---
 
+> 想知道**還有哪些技能來源與最新排名**? 👉 [第 9 課 Skill 來源榜](09-skill-sources-ranking.md)
+>
 > 回到 [課程首頁](../README.md) ｜ 複習 [速查表](../CHEATSHEET.md)
