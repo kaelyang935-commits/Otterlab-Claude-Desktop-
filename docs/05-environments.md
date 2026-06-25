@@ -64,6 +64,8 @@
 
 ## 4. 給「Claude Desktop App」使用者的重點
 
+> 📌 **再次提醒：** 桌面 App 裡有 Chat／Cowork／**Code** 三個分頁,本教材的斜線指令都在 **Code 分頁**;下面說「桌面 App」時,指的就是 Code 分頁。（這四種「執行環境」講的是程式在哪裡跑,跟分頁是不同的軸,別搞混。）
+
 如果你主要用桌面 App（本教材的主場景）：
 
 - ✅ 你能用幾乎所有指令，包含互動面板（`/config`、`/permissions`…）。
@@ -98,4 +100,4 @@
 
 ---
 
-> 最後一課是給講師的教學設計指南 👉 [第 6 課 講師教學手冊](06-instructor-guide.md)
+> 接下來：[第 6 課 講師教學手冊](06-instructor-guide.md)（講師專用)。**學生可直接跳到進階專題** 👉 [第 7 課 Anthropic 官方 Skills](07-anthropic-skills.md)
