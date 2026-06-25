@@ -135,14 +135,13 @@ pdf/
 
 ## 6. 四種環境怎麼用 Skills
 
-### 🅰️ Claude App(claude.ai / 桌面版)
+### 🅰️ Claude App(claude.ai / 桌面版聊天介面)
 
-- **內建技能**:pptx、xlsx、docx、pdf — 免設定、自動可用。
-- **自訂技能**:打包成 `.zip` 上傳。
-  1. 把技能資料夾(含 `SKILL.md`)壓成 `.zip`
-  2. **設定 → Capabilities/功能 → Skills**
-  3. 點「上傳技能」選 `.zip`
-- **條件**:需 Pro／Max／Team／Enterprise 方案,且開啟「程式執行(code execution)」。範圍僅限你個人。
+- **內建技能**:pptx、xlsx、docx、pdf — 開啟程式執行後自動可用。
+- **自訂技能**:打包成 `.zip`,到 **Customize(自訂)→ Skills** 上傳:
+  點「+」→「+ Create skill」→「Upload a skill」→ 選 `.zip`。
+- **條件**:免費與付費方案皆可,但須先到 **設定 → Capabilities** 開啟「Code execution and file creation」,Skills 區塊才會出現。範圍僅限你個人。
+- 📖 **完整圖文步驟** 👉 [動手做:在 Claude Desktop 上傳技能](08-upload-skill-on-claude-app.md)
 
 ### 🅱️ Claude Code(本課主場景,含桌面 App)
 

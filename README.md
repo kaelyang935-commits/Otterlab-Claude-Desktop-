@@ -41,6 +41,7 @@
 | 5 | [執行環境差異](docs/05-environments.md) | 桌面 App / 終端機 / 網頁的差別與互通 | 30 分 |
 | 6 | [講師教學手冊](docs/06-instructor-guide.md) | 授課順序、常見誤區、評量、教學腳本 | 講師專用 |
 | 7 | [Anthropic 官方 Skills（進階專題）](docs/07-anthropic-skills.md) | 官方 GitHub、漸進式揭露、`SKILL.md`、四環境用法、安全 | 60 分 |
+| 8 | [動手做：在 Claude Desktop 上傳技能](docs/08-upload-skill-on-claude-app.md) | 打包 `.zip`、開啟 code execution、上傳步驟、疑難排解 | 30 分 |
 | ⚡ | [指令速查表 CHEATSHEET](CHEATSHEET.md) | 一頁掌握所有常用指令（可印出發給學生） | — |
 
 ---
@@ -73,7 +74,7 @@
                                    │
 中階 ───────────────────────────▶ 第3課 技能指令 ──▶ 第5課 環境差異
                                    │
-進階 ───────────────────────────▶ 第4課 自訂指令 ──▶ 第7課 官方 Skills（進階專題）
+進階 ───────────────────────────▶ 第4課 自訂指令 ──▶ 第7課 官方 Skills ──▶ 第8課 動手做:上傳技能
 ```
 
 ---
