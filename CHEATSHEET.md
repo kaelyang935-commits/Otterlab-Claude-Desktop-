@@ -83,6 +83,16 @@
 
 ---
 
+## 🧩 Anthropic 官方 Skills
+
+- 官方 repo：**github.com/anthropics/skills**（文件技能 pdf/docx/pptx/xlsx 為專有授權）
+- 結構：資料夾 + `SKILL.md`（`name` ≤64 字、`description` ≤1024 字，description 決定觸發）
+- 漸進式揭露三層：中繼資料（啟動）→ `SKILL.md` 本文（觸發時）→ 附帶資源／腳本（需要時）
+- 安裝：Claude Code `/plugin marketplace add anthropics/skills` → `/plugin`；App 上傳 `.zip`
+- ⚠️ 第三方技能能執行程式碼，安裝前先審查來源與腳本
+
+---
+
 ## 四個運作規則
 
 1. 指令**放開頭** 2. 後面接**參數** 3. 打 `/` 叫**選單** 4. 部分是**互動面板**

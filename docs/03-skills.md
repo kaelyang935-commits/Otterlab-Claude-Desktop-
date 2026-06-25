@@ -91,6 +91,8 @@
 | 你的專案／個人 | `/名稱` | `/commit`（你寫的） |
 | 外掛 | `/外掛名:名稱` | `/my-plugin:deploy` |
 
+> 🚀 **想深入官方 Skills?** Anthropic 在 GitHub 開源了一整套官方技能,並有「漸進式揭露」「`SKILL.md` 格式」「四種環境安裝法」等完整機制 👉 見 [第 7 課 Anthropic 官方 Skills](07-anthropic-skills.md)。
+
 ---
 
 ## 📝 課堂練習
