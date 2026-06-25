@@ -88,11 +88,10 @@
 - 官方 repo：**github.com/anthropics/skills**（文件技能 pdf/docx/pptx/xlsx 為專有授權）
 - 結構：資料夾 + `SKILL.md`（`name` ≤64 字、`description` ≤1024 字，description 決定觸發）
 - 漸進式揭露三層：中繼資料（啟動）→ `SKILL.md` 本文（觸發時）→ 附帶資源／腳本（需要時）
-- 🟢 最簡單(新手):把某個 `.md` 的 GitHub 網址貼給 agent →「讀這個並照做」（零安裝；只指向可信網址；圖文見第 10 課）
-- 安裝：Claude Code `/plugin marketplace add anthropics/skills` → `/plugin`；App 上傳 `.zip`
-- 更多來源：Top 10 來源榜見第 9 課（🛒 市集可一鍵 `add`，📒 清單需自行取用）
-- ⚠️ 官方內建技能**別自行替換/修改**（會隨 Claude Desktop 更新並配合模型/harness/loop）；要擴充用外掛或另開新技能
-- ⚠️ 第三方技能能執行程式碼，安裝前先審查來源與腳本
+- 🟢 用法(新手):把某個 `.md` 的 GitHub 網址貼給 agent →「讀這個並照做」（零安裝；只指向可信網址；圖文見第 9 課）
+- 找技能：到 GitHub 找適合你「當下任務」的 skill `.md`（熱門來源榜見第 8 課）
+- ⚠️ 官方內建技能**別自行替換/修改**（會隨 Claude Desktop 更新並配合模型/harness/loop）；要擴充就找一份 `.md` 或自己寫一個
+- ⚠️ 第三方技能能執行程式碼，使用前先審查來源與腳本
 
 ---
 

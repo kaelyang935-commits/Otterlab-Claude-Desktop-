@@ -41,9 +41,8 @@
 | 5 | [執行環境差異](docs/05-environments.md) | 桌面 App / 終端機 / 網頁的差別與互通 | 30 分 |
 | 6 | [講師教學手冊](docs/06-instructor-guide.md) | 授課順序、常見誤區、評量、教學腳本 | 講師專用 |
 | 7 | [Anthropic 官方 Skills（進階專題）](docs/07-anthropic-skills.md) | 官方 GitHub、漸進式揭露、`SKILL.md`、四環境用法、安全 | 60 分 |
-| 8 | [動手做：在 Claude Desktop 上傳技能](docs/08-upload-skill-on-claude-app.md) | 打包 `.zip`、開啟 code execution、上傳步驟、疑難排解 | 30 分 |
-| 9 | [Skill 來源榜（Top 10 與調用法）](docs/09-skill-sources-ranking.md) | GitHub 來源排名、最簡單的「給 URL 叫 agent 執行」、市集 vs 清單、`/plugin` 調用、安全 | 30 分 |
-| 10 | [動手做：給 agent 一個 URL 一鍵執行技能](docs/10-run-skill-from-url.md) | 零安裝、找 `.md`、Raw 連結、示範對話、安全 | 20 分 |
+| 8 | [找到適合你任務的 GitHub Skill .md](docs/08-find-skill-md.md) | 心法（先官方、缺的找 `.md`）、怎麼挑、熱門來源榜、安全 | 30 分 |
+| 9 | [動手做：給 agent 一個 URL 一鍵執行技能](docs/09-run-skill-from-url.md) | 零安裝、找 `.md`、Raw 連結、示範對話、安全 | 20 分 |
 | ⚡ | [指令速查表 CHEATSHEET](CHEATSHEET.md) | 一頁掌握所有常用指令（可印出發給學生） | — |
 
 ---
@@ -76,9 +75,9 @@
                                    │
 中階 ───────────────────────────▶ 第3課 技能指令 ──▶ 第5課 環境差異
                                    │
-進階 ───────────────────────────▶ 第4課 自訂指令 ──▶ 第7課 官方 Skills ──▶ 第8課 上傳技能
+進階 ───────────────────────────▶ 第4課 自訂指令 ──▶ 第7課 官方 Skills(用官方、別替換)
                                    │
-技能調用 ──────────────────────────▶ 第9課 來源榜 ──▶ 第10課 給 URL 一鍵執行(新手最簡單)
+技能調用 ──────────────────────────▶ 第8課 找 Skill .md ──▶ 第9課 給 URL 一鍵執行(新手最簡單)
 ```
 
 ---

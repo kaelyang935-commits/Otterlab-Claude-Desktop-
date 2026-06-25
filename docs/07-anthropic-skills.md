@@ -1,18 +1,17 @@
-# 第 7 課（進階專題）｜Anthropic 官方 Skills：GitHub、用法與教學
+# 第 7 課（進階專題）｜Anthropic 官方 Skills:概念與用法
 
 > 回到：[課程首頁](../README.md) ｜ 延伸自：[第 3 課 技能指令](03-skills.md)、[第 4 課 自訂指令](04-custom-commands.md)
 
-> 本課是進階專題。學會 [第 3 課](03-skills.md)（技能是什麼）與 [第 4 課](04-custom-commands.md)（自己寫指令）後再讀，效果最好。
+> 本課是進階專題。學會 [第 3 課](03-skills.md)（技能是什麼）與 [第 4 課](04-custom-commands.md)（自己寫指令）後再讀,效果最好。
 
 ---
 
 ## 🎯 學習目標
 
 1. 知道 **Anthropic 官方 Skills 的 GitHub repo** 在哪、收錄了什麼。
-2. 理解 Skills 的核心設計：**漸進式揭露（Progressive Disclosure）**。
+2. 理解 Skills 的核心設計:**漸進式揭露（Progressive Disclosure）**。
 3. 看懂 `SKILL.md` 的結構。
-4. 會在 **四種環境**（Claude App／Claude Code／API／Agent SDK）使用 Skills。
-5. 知道安裝第三方 Skill 的**安全風險**。
+4. 建立正確心法:**官方技能自動用、別替換;缺的就找一份 `.md` 來用**。
 
 ---
 
@@ -42,7 +41,6 @@ anthropics/skills/
 ├── skills/                 # 各個技能範例(主要看這裡)
 ├── spec/                   # Agent Skills 規格說明
 ├── template/               # 建立新技能用的範本
-├── .claude-plugin/         # 外掛中繼資料
 ├── README.md
 └── THIRD_PARTY_NOTICES.md
 ```
@@ -70,7 +68,7 @@ anthropics/skills/
 
 ## ⚠️ 重要原則:不要自行更換官方 Skills
 
-> **官方內建的 Skills 不要自己去替換或修改。想擴充能力,請改用「外掛(plugin)」,或在自己的 skills 目錄「另外新增」具名技能。**
+> **官方內建的 Skills 不要自己去替換或修改。想擴充能力,請「另外新增」——找一份適合的 skill `.md`,或在自己的 skills 目錄放具名的新技能。**
 
 **為什麼?**
 
@@ -84,11 +82,11 @@ anthropics/skills/
 
 | 你想做的 | 正確方式 |
 |---|---|
-| 增加新能力 | 用**外掛市集**安裝(見 [第 9 課](09-skill-sources-ranking.md)),或在 `~/.claude/skills/`、`.claude/skills/` 放**自己命名**的技能 |
+| 增加新能力 | **找一份適合的 skill `.md`** 來用(見 [第 8 課](08-find-skill-md.md)),或在 `~/.claude/skills/` 放**自己命名**的技能 |
 | 客製某個流程 | 寫一個**新的、具名**技能(見 [第 4 課](04-custom-commands.md)),別用與官方同名而蓋掉它 |
 | 不想要某個內建技能 | 用設定**停用**它,而不是去改它的檔案 |
 
-> 🧠 一句話:**官方件用「原廠」的就好;要加東西,用外掛或自己另開新技能,別動原廠件。**
+> 🧠 一句話:**官方件用「原廠」的就好;要加東西,另外找一份 `.md` 或自己另開新技能,別動原廠件。**
 
 ---
 
@@ -157,94 +155,20 @@ pdf/
 
 ---
 
-## 6. 四種環境怎麼用 Skills
+## 6. 官方技能怎麼用?(很簡單)
 
-### 🅰️ Claude App(claude.ai / 桌面版聊天介面)
+**結論先講:官方技能「內建就會用」,你幾乎不用做任何設定。**
 
-- **內建技能**:pptx、xlsx、docx、pdf — 開啟程式執行後自動可用。
-- **自訂技能**:打包成 `.zip`,到 **Customize(自訂)→ Skills** 上傳:
-  點「+」→「+ Create skill」→「Upload a skill」→ 選 `.zip`。
-- **條件**:免費與付費方案皆可,但須先到 **設定 → Capabilities** 開啟「Code execution and file creation」,Skills 區塊才會出現。範圍僅限你個人。
-- 📖 **完整圖文步驟** 👉 [動手做:在 Claude Desktop 上傳技能](08-upload-skill-on-claude-app.md)
+- **日常任務** → 直接講你要做的事,Claude 會在合適時**自動**使用對應的官方技能(做 Word／PPT／Excel／PDF、審查程式碼…)。
+- **官方沒有、又很具體的任務** → 去 GitHub **找一份適合的 skill `.md`**(見 [第 8 課](08-find-skill-md.md)),再用**最簡單的方式**叫 agent 執行:把那份 `.md` 的網址貼給它,說「讀這個並照做」(見 [第 9 課](09-run-skill-from-url.md))。
+- **想做一個自己專屬的技能** → 用 `/skill-creator` 幫你產生,或照 [第 4 課](04-custom-commands.md) 自己寫,放進 `~/.claude/skills/`。
 
-### 🅱️ Claude Code(本課主場景,含桌面 App)
-
-技能用**檔案系統**探索,不必上傳:
-
-| 位置 | 範圍 |
-|---|---|
-| `~/.claude/skills/<名稱>/SKILL.md` | 個人(所有專案可用) |
-| `.claude/skills/<名稱>/SKILL.md` | 專案(隨 repo 進版控,團隊共用) |
-| 外掛(plugin) | 以 `/外掛名:技能名` 呼叫 |
-
-**從官方 repo 安裝(外掛市集):**
-```
-/plugin marketplace add anthropics/skills   ← 加入官方市集
-/plugin                                      ← 開選單瀏覽並安裝
-/skills                                      ← 列出目前可用技能
-/reload-skills                               ← 不重啟即時重新掃描
-```
-
-> 🟢 **最簡單(臨時用,新手首選):** 不想安裝的話,直接把某個技能 `.md` 的 GitHub 網址貼給 agent,說「讀取這個並照做」即可(詳見 [第 9 課](09-skill-sources-ranking.md))。
-
-### 🅲 Claude API(Messages API)
-
-需要三個 beta 標頭 + 程式執行工具,並用 `container.skills` 指定技能:
-
-```python
-import anthropic
-client = anthropic.Anthropic()
-
-resp = client.beta.messages.create(
-    model="claude-opus-4-8",
-    max_tokens=4096,
-    betas=["code-execution-2025-08-25",
-           "skills-2025-10-02",
-           "files-api-2025-04-14"],
-    container={"skills": [
-        {"type": "anthropic", "skill_id": "pptx", "version": "latest"}
-    ]},
-    tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
-    messages=[{"role": "user", "content": "幫我做一份再生能源簡報"}],
-)
-```
-
-- 內建技能 `skill_id`:`pptx`／`xlsx`／`docx`／`pdf`。
-- 自訂技能:用 **Skills API**(`POST /v1/skills` 等端點)上傳後,以 `{"type": "custom", "skill_id": ...}` 使用。
-- 限制:技能內**無網路**、不能臨時裝套件、單一技能上限約 30MB。
-
-### 🅳 Claude Agent SDK
-
-把技能放進專案的 `.claude/skills/`,SDK 會**自動探索**,行為與 Claude Code 一致,無需額外設定。
-
-### 📊 四環境摘要
-
-| 環境 | 內建技能 | 自訂技能 | 探索方式 |
-|---|---|---|---|
-| Claude App | ✅(4 個文件技能) | 上傳 `.zip` | 自動 |
-| Claude Code | 透過外掛 | `.claude/skills/` 檔案 | 掃描檔案系統 |
-| Claude API | ✅(`container`) | Skills API 上傳 | `container` 參數 |
-| Agent SDK | — | `.claude/skills/` 檔案 | 自動探索 |
+> 🧠 一句話:**官方的自動用;缺的,找一份 `.md` 貼網址給 agent 跑;要專屬的,自己做一個。**
+> 不必學上傳 `.zip`、也不必碰外掛市集——對學員來說,記住上面三句就夠了。
 
 ---
 
-## 7. 🛠️ 動手做
-
-### A. 安裝並試用官方技能(Claude Code)
-1. `/plugin marketplace add anthropics/skills`
-2. `/plugin` → 找一個技能(例如 `slack-gif-creator`)安裝
-3. `/skills` 確認它出現
-4. 用自然語言觸發它,觀察 Claude 如何讀取 `SKILL.md`
-
-### B. 用 `skill-creator` 做一個自己的技能
-1. 在 Claude Code 執行 `/skill-creator`(或安裝官方的 skill-creator)
-2. 描述你要的技能(例:「把會議逐字稿整理成行動項目」)
-3. 讓它幫你產生 `SKILL.md` 與資料夾結構
-4. 放到 `~/.claude/skills/` → `/reload-skills` → 試用
-
----
-
-## 8. 撰寫最佳實務(出自官方指南)
+## 7. 撰寫最佳實務(出自官方指南)
 
 - **描述要好**:第三人稱、寫出能力 + 觸發關鍵字(這是觸發成敗關鍵)。
 - **精簡**:假設 Claude 已懂通用概念;每段都問「真的需要嗎?」;**範例優於長篇解釋**;本文 < 500 行。
@@ -254,18 +178,17 @@ resp = client.beta.messages.create(
 
 ---
 
-## 9. ⚠️ 安全提醒(務必教給學生)
+## 8. ⚠️ 安全提醒(務必教給學生)
 
-> **技能擁有「執行工具與腳本」的能力。安裝來路不明的第三方技能,等同在你的環境執行別人的程式碼。**
+> **技能擁有「執行工具與腳本」的能力。使用來路不明的第三方技能,等同在你的環境執行別人的程式碼。**
 
-- 只安裝**可信來源**的技能(官方 `anthropics/skills`、你自己或團隊寫的)。
-- 安裝前**先讀 `SKILL.md` 與其腳本**,看它會做什麼、要哪些權限。
+- 只使用**可信來源**的技能(官方 `anthropics/skills`、你自己或團隊寫的)。
+- 使用前**先讀 `SKILL.md` 與其腳本**,看它會做什麼;不確定就先請 agent「**先摘要、不要執行**」。
 - 善用 `allowed-tools` 限制技能可用的工具。
-- 在 Claude Code 用 `claude plugin validate` 檢查外掛/技能結構。
 
 ---
 
-## 10. 重要連結
+## 9. 重要連結
 
 | 資源 | 連結 |
 |---|---|
@@ -283,8 +206,8 @@ resp = client.beta.messages.create(
 1. **觀念題:** 用一句話解釋「漸進式揭露」的三層,各在什麼時候載入。
 2. **判斷題:** 我把官方的 `pptx` 技能直接拿去商業產品散布,可以嗎?為什麼?
 3. **描述練習:** 替一個「把 CSV 轉成圖表」的技能,寫一段「好的」`description`(要含能力 + 觸發情境)。
-4. **實作:** 用 `/plugin marketplace add anthropics/skills` 加入市集,安裝任一技能並 `/skills` 列出它。
-5. **安全題:** 朋友傳你一個 `.zip` 技能叫你裝,你裝之前會先做哪兩件事?
+4. **實作:** 到 [第 8 課](08-find-skill-md.md) 的來源找一個你用得到的技能,打開它的 `SKILL.md` 看 `description` 適不適合你的任務。
+5. **安全題:** 你想用一個第三方技能的 `.md`,在叫 agent「照做」前會先做哪兩件事?
 
 <details>
 <summary>👉 點此看參考答案</summary>
@@ -292,7 +215,7 @@ resp = client.beta.messages.create(
 1. L1 中繼資料(name/description)啟動就載;L2 `SKILL.md` 本文在判斷用得到時載;L3 附帶資源(腳本/參考檔)在需要時才載。
 2. **不行**。`pptx` 等四個文件技能是 source-available 的**專有授權**,僅供參考,不可任意散布。
 3. 範例:`Convert CSV/tabular data into charts (bar, line, pie). Use when the user has a .csv file or asks to visualize/plot data.`
-5. (a) 先讀它的 `SKILL.md` 與腳本看會做什麼;(b) 確認來源可信,必要時用 `allowed-tools` 限制權限。
+5. (a) 先打開那份 `.md` 自己讀、看它要 agent 做什麼;(b) 確認來源可信,或先請 agent「先摘要再執行」。
 
 </details>
 
@@ -303,11 +226,10 @@ resp = client.beta.messages.create(
 - 官方 repo:**github.com/anthropics/skills**(文件類技能為專有授權,非開源)。
 - Skills = 資料夾 + `SKILL.md`(`name`/`description` 必填,description 決定觸發)。
 - 核心是**漸進式揭露**三層,啟動成本低、可擴充。
-- 四環境:App 上傳 `.zip`、Claude Code 放 `.claude/skills/`、API 用 `container.skills`、SDK 自動探索。
-- **安裝第三方技能前務必審查**——它能執行程式碼。
+- 用法很簡單:**官方技能自動用**;缺的就**找一份 `.md`、貼網址叫 agent 跑**(第 8、9 課);**別替換官方件**。
 
 ---
 
-> 想知道**還有哪些技能來源與最新排名**? 👉 [第 9 課 Skill 來源榜](09-skill-sources-ranking.md)
+> 想知道**去哪裡找適合你任務的技能 `.md`**? 👉 [第 8 課 找到適合你任務的 Skill .md](08-find-skill-md.md)
 >
 > 回到 [課程首頁](../README.md) ｜ 複習 [速查表](../CHEATSHEET.md)

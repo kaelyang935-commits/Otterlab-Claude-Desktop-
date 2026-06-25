@@ -23,7 +23,7 @@
 > - 內建指令像「電燈開關」——按下去就亮。
 > - 技能指令像「呼叫一位專家」——你說「幫我審查程式碼」，他會自己決定要看哪些檔、跑哪些檢查。
 
-技能可以是 **內建（bundled）** 的，也可以由 **外掛** 或 **你自己**（[第 4 課](04-custom-commands.md)）提供。
+技能可以是 **內建（bundled）** 的，也可以由 **外部來源** 或 **你自己**（[第 4 課](04-custom-commands.md)）提供。
 
 ---
 
@@ -44,7 +44,7 @@
 
 > 用 `/skills` 可列出目前裝置上所有可用技能。
 
-> ⚠️ **別自行替換或修改官方內建技能** —— 它們會隨 Claude Desktop 版本更新並配合模型能力、harness、loop 工程。要擴充請用**外掛**或**另開具名的新技能**(原因見 [第 7 課](07-anthropic-skills.md))。
+> ⚠️ **別自行替換或修改官方內建技能** —— 它們會隨 Claude Desktop 版本更新並配合模型能力、harness、loop 工程。要擴充請**另外新增**技能(找一份 skill `.md` 或自己寫一個),原因見 [第 7 課](07-anthropic-skills.md)。
 
 ---
 
@@ -91,9 +91,8 @@
 |---|---|---|
 | 內建 | `/名稱` | `/code-review` |
 | 你的專案／個人 | `/名稱` | `/commit`（你寫的） |
-| 外掛 | `/外掛名:名稱` | `/my-plugin:deploy` |
 
-> 🚀 **想深入官方 Skills?** Anthropic 在 GitHub 開源了一整套官方技能,並有「漸進式揭露」「`SKILL.md` 格式」「四種環境安裝法」等完整機制 👉 見 [第 7 課 Anthropic 官方 Skills](07-anthropic-skills.md)。
+> 🚀 **想深入官方 Skills?** Anthropic 在 GitHub 開源了一整套官方技能,並有「漸進式揭露」「`SKILL.md` 格式」「不可替換官方」等重點 👉 見 [第 7 課 Anthropic 官方 Skills](07-anthropic-skills.md)。
 
 ---
 
