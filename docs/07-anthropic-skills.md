@@ -185,6 +185,8 @@ pdf/
 /reload-skills                               ← 不重啟即時重新掃描
 ```
 
+> 🟢 **最簡單(臨時用,新手首選):** 不想安裝的話,直接把某個技能 `.md` 的 GitHub 網址貼給 agent,說「讀取這個並照做」即可(詳見 [第 9 課](09-skill-sources-ranking.md))。
+
 ### 🅲 Claude API(Messages API)
 
 需要三個 beta 標頭 + 程式執行工具,並用 `container.skills` 指定技能:
